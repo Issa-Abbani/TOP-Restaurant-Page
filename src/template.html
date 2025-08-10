@@ -4,20 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/styles.css">
+  <script type="module" src="./js/index.js"></script>
   <title>Cabistro</title>
   <link rel="icon" type="image/png" href="assets/images/cabistro_icon.png">
 </head>
 <body>
   <header>
-    <img src="assets/images/cabistro_icon.png" alt="img not found" loading="lazy">
+    <img class="logo" src="assets/images/cabistro_icon.png" alt="img not found" loading="lazy">
     <nav>
-      <ul>
+      <ul class="nav-items">
         <li><button value="home">Home</button></li>
         <li><button value="menu">Menu</button></li>
         <li><button value="review">Review</button></li>
       </ul>
     </nav>
+
+    <img class="mobile-dash-btn" src="assets/svg/menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="not found" loading="lazy">
   </header>
+
+  <nav class="mobileSidebar inactive">
+    <div class="x-cont">
+      <img class="mobile-close-dash-btn" src="assets/svg/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="not found" loading="lazy">
+    </div>
+    <ul class="nav-items">
+      <li><button value="home">Home</button></li>
+      <li><button value="menu">Menu</button></li>
+      <li><button value="review">Review</button></li>
+    </ul>
+  </nav>
 
   <main>
     <section class="home intro-home">

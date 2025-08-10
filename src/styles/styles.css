@@ -27,14 +27,19 @@ header{
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(to bottom, var(--main-header-color), var(--dark-background-color));
-  z-index: 999;
+  z-index: 998;
 }
-header > img {
+header .logo {
   width: 10%;
   height: 10%;
   scale: 0.7;
   cursor: pointer;
 }
+
+.mobile-dash-btn{
+  display: none;
+}
+
 header ul {
   list-style: none;
   display: flex;
@@ -83,6 +88,7 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .home{
@@ -173,18 +179,19 @@ main{
   opacity: 0.8;
 }
 
+.mobileSidebar{
+  display: none;
+}
 
-/* Existing CSS stays above */
-
-/* Mobile responsiveness */
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem;
   }
 
-  header > img {
+  header > .logo {
     width: 30%;
     height: auto;
     margin-bottom: 1rem;
@@ -250,5 +257,91 @@ main{
     flex-direction: row;
     justify-content: center;
   }
+
+  /* Dashboard Styling */
+  .mobile-dash-btn{
+    display: block;
+    width: 10vw;
+    height: 10vh;
+  } 
+
+  .mobileSidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    gap: 5vh;
+    position: fixed;
+    z-index: 9999;
+    left: 60%;
+    background: linear-gradient(to top, var(--main-logo-color), var(--dark-background-color));
+    top: 0;
+    bottom: 0;
+    right: 0;
+    
+  }
+
+  .mobile-close-dash-btn{
+    width: 10vw;
+    height: 10vh;
+  }
+
+  .x-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: var(--dark-background-color);
+  }
+
+  .mobileSidebar.inactive{
+    display: none;
+  }
+
+
+  .mobileSidebar.active ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    flex: 1, 0, 200px;
+    margin-right: clamp(4rem, 5rem, 6rem);
+  }
+
+  .mobileSidebar.active ul li {
+    padding: 1rem;
+  }
+
+  .mobileSidebar.active ul li button {
+    position: relative;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--main-text-color);
+    display: block;
+  }
+
+  .mobileSidebar.active ul li button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 0;
+    background-color: var(--main-text-color);
+    transition: width 0.3s ease-in;
+    border-radius: 1px;
+  }
+
+  .mobileSidebar.active ul li button:focus::after {
+    width: 100%;
+  }
+
+  main.paused{
+    pointer-events: none;
+  }
+
 }
 
