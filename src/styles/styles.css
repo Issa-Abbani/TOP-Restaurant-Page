@@ -1,0 +1,73 @@
+:root{
+  --main-logo-color: #3E1A1A;
+  --main-header-color:#3e1a1aa0;
+  --dark-background-color: rgb(28, 28, 28);
+  --main-red-color: #9A192F;
+  --main-text-color: #FFFFFD;
+}
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+  background: var(--dark-background-color) center;
+}
+header{
+  position: sticky;
+  inset: 0px 0px 80% 0px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  background: linear-gradient(to bottom, var(--main-header-color), var(--dark-background-color));
+}
+header > img {
+  width: 10%;
+  height: 10%;
+  scale: 0.7;
+  cursor: pointer;
+}
+header ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  flex: 1, 0, 200px;
+  margin-right: clamp(4rem, 5rem, 6rem);
+}
+
+header ul li button {
+  position: relative;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--main-text-color);
+  display: block;
+    transition: scale 0.3s ease;
+}
+
+header ul li button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 0;
+  background-color: var(--main-text-color);
+  transition: width 0.3s ease-in;
+  border-radius: 1px;
+}
+
+header ul li button:hover{
+  scale: 1.1;
+}
+
+header ul li button:focus::after {
+  width: 100%;
+}
