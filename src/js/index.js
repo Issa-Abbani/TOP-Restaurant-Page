@@ -1,4 +1,4 @@
-// import '../styles/styles.css';
+import '../styles/styles.css';
 import { sidebar } from "./sidebar.js";
 import { tabSwitching } from "./tabSwitch.js";
 
