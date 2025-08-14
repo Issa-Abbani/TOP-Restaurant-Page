@@ -1,4 +1,5 @@
 import { generateHome } from "./generateHome.js";
+import { generateMenu } from "./generateMenu.js";
 
 export const generatePage = (function(){
   const main = document.querySelector('main');
@@ -8,7 +9,7 @@ export const generatePage = (function(){
   }
 
   const loadMenu = ()=>{
-    main.innerHTML = '';
+    generateMenu.loadMe();
   }
 
   const loadReviews = ()=>{
