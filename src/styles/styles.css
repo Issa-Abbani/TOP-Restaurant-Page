@@ -79,7 +79,7 @@ header ul li button:hover{
   scale: 1.1;
 }
 
-header ul li button:focus::after {
+header ul li button.active-tab::after {
   width: 100%;
 }
 

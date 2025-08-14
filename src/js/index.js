@@ -1,12 +1,11 @@
 // import '../styles/styles.css';
 import { sidebar } from "./sidebar.js";
-import { generateHome } from "./generateHome.js";
-import { generatePage } from "./pageLoad.js";
+import { tabSwitching } from "./tabSwitch.js";
 
 
 function main(){
   sidebar.sidebarEvents();
-  generatePage.loadHome();
+  tabSwitching();
 }
 
 main();

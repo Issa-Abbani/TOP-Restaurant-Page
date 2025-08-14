@@ -14,7 +14,5 @@ export const generatePage = (function(){
   const loadReviews = ()=>{
     main.innerHTML = '';
   }
-
-
   return{loadHome, loadMenu, loadReviews};
 })();
