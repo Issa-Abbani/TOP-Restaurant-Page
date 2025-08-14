@@ -2,12 +2,7 @@
 import { sidebar } from "./sidebar.js";
 import { tabSwitching } from "./tabSwitch.js";
 
-
-function main(){
+document.addEventListener('DOMContentLoaded', () => {
   sidebar.sidebarEvents();
   tabSwitching();
-}
-
-main();
-
-console.log('Hello world!');
+})
